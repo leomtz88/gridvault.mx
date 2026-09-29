@@ -2,21 +2,14 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>GridVault | Energía Inteligente</title>
 
     <style>
-
-        /* =========================================
-           CONFIGURACIÓN GENERAL
-           ========================================= */
 
         * {
             margin: 0;
@@ -35,145 +28,71 @@
             overflow-x: hidden;
         }
 
-        img {
-            display: block;
-        }
+        /* =========================
+           IMAGEN PRINCIPAL
+           ========================= */
 
-
-        /* =========================================
-           CONTENEDOR PRINCIPAL
-           ========================================= */
-
-        .image-container {
-            position: relative;
+        .contenedor {
             width: 100%;
-            max-width: 100%;
+            margin: 0;
+            padding: 0;
             line-height: 0;
         }
 
-
-        /* =========================================
-           IMAGEN COMPUTADORA
-           ========================================= */
-
-        .desktop-image {
+        .imagen-web {
             display: block;
             width: 100%;
             height: auto;
-            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
         }
 
+        /* =========================
+           BOTÓN DE CORREO
+           ========================= */
 
-        /* =========================================
-           IMAGEN CELULAR
-           ========================================= */
-
-        .mobile-image {
-            display: none;
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-        }
-
-
-        /* =========================================
-           CORREO CLICKEABLE - COMPUTADORA
-           ========================================= */
-
-        .email-link-desktop {
-
+        .correo {
             position: absolute;
-
-            left: 5%;
-            bottom: 8%;
-
-            width: 32%;
-            height: 8%;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 15%;
 
             display: block;
-
-            z-index: 10;
 
             text-decoration: none;
+            background: transparent;
 
-            cursor: pointer;
+            z-index: 10;
         }
 
+        /* =========================
+           COMPUTADORA
+           ========================= */
 
-        /* =========================================
+        @media (min-width: 769px) {
+
+            .correo {
+                height: 13%;
+            }
+
+        }
+
+        /* =========================
            CELULAR
-           ========================================= */
+           ========================= */
 
-        @media screen and (max-width: 767px) {
+        @media (max-width: 768px) {
 
-            .desktop-image {
-                display: none;
+            .contenedor {
+                width: 100%;
             }
 
-            .mobile-image {
-                display: block;
+            .imagen-web {
                 width: 100%;
                 height: auto;
-                max-width: 100%;
-            }
-
-            .email-link-desktop {
-                display: none;
-            }
-
-            /*
-             * ÁREA CLICKEABLE DEL CORREO
-             *
-             * La imagen nueva es 1206 x 2622.
-             */
-
-            .email-link-mobile {
-
-                position: absolute;
-
-                left: 5%;
-
-                bottom: 5%;
-
-                width: 70%;
-
-                height: 6%;
-
-                display: block;
-
-                z-index: 10;
-
-                text-decoration: none;
-
-                cursor: pointer;
-            }
-
-        }
-
-
-        /* =========================================
-           ENLACE CELULAR
-           ========================================= */
-
-        .email-link-mobile {
-            display: none;
-        }
-
-
-        /* =========================================
-           TABLETS
-           ========================================= */
-
-        @media screen and (min-width: 768px) and (max-width: 1024px) {
-
-            .desktop-image {
-                display: block;
-                width: 100%;
-                height: auto;
-            }
-
-            .mobile-image {
-                display: none;
+                object-fit: contain;
             }
 
         }
@@ -182,61 +101,39 @@
 
 </head>
 
-
 <body>
 
+    <div class="contenedor">
 
-    <div class="image-container">
+        <!--
+        IMAGEN PARA COMPUTADORA
+        -->
+        <picture>
 
+            <!-- Imagen vertical para celular -->
+            <source
+                media="(max-width: 768px)"
+                srcset="IMAGEN WEB CELULAR.png">
 
-        <!-- =====================================
-             VERSIÓN COMPUTADORA
-             ===================================== -->
+            <!-- Imagen horizontal para computadora -->
+            <img
+                class="imagen-web"
+                src="IMAGEN WEB TEMPORAL.png"
+                alt="GridVault - Energía Inteligente">
 
-        <img
-            class="desktop-image"
-            src="IMAGEN WEB TEMPORAL.png"
-            alt="GridVault - Energía Inteligente"
-        >
+        </picture>
 
-
-        <!-- =====================================
-             CORREO COMPUTADORA
-             ===================================== -->
-
+        <!--
+        ÁREA CLICABLE DEL CORREO
+        -->
         <a
-            class="email-link-desktop"
+            class="correo"
             href="mailto:hola@gridvault.mx"
-            aria-label="Enviar correo a hola@gridvault.mx"
-        ></a>
-
-
-        <!-- =====================================
-             VERSIÓN CELULAR
-             1206 x 2622 px
-             ===================================== -->
-
-        <img
-            class="mobile-image"
-            src="IMAGEN WEB CELULAR.png"
-            alt="GridVault - Energía Inteligente"
-        >
-
-
-        <!-- =====================================
-             CORREO CELULAR
-             ===================================== -->
-
-        <a
-            class="email-link-mobile"
-            href="mailto:hola@gridvault.mx"
-            aria-label="Enviar correo a hola@gridvault.mx"
-        ></a>
-
+            aria-label="Enviar correo a hola@gridvault.mx">
+        </a>
 
     </div>
 
-
 </body>
 
-</html>V
+</html>
