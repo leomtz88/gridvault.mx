@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>GridVault | Energía Inteligente</title>
 
@@ -28,11 +27,8 @@
             overflow-x: hidden;
         }
 
-        /* =========================
-           IMAGEN PRINCIPAL
-           ========================= */
-
         .contenedor {
+            position: relative;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -48,29 +44,20 @@
             border: 0;
         }
 
-        /* =========================
-           BOTÓN DE CORREO
-           ========================= */
-
+        /* Área invisible sobre el correo */
         .correo {
             position: absolute;
             left: 0;
             bottom: 0;
             width: 100%;
-            height: 15%;
-
+            height: 14%;
             display: block;
-
             text-decoration: none;
             background: transparent;
-
             z-index: 10;
         }
 
-        /* =========================
-           COMPUTADORA
-           ========================= */
-
+        /* COMPUTADORA */
         @media (min-width: 769px) {
 
             .correo {
@@ -79,10 +66,7 @@
 
         }
 
-        /* =========================
-           CELULAR
-           ========================= */
-
+        /* CELULAR */
         @media (max-width: 768px) {
 
             .contenedor {
@@ -95,6 +79,10 @@
                 object-fit: contain;
             }
 
+            .correo {
+                height: 12%;
+            }
+
         }
 
     </style>
@@ -105,17 +93,14 @@
 
     <div class="contenedor">
 
-        <!--
-        IMAGEN PARA COMPUTADORA
-        -->
         <picture>
 
-            <!-- Imagen vertical para celular -->
+            <!-- IMAGEN VERTICAL PARA CELULAR -->
             <source
                 media="(max-width: 768px)"
                 srcset="IMAGEN WEB CELULAR.png">
 
-            <!-- Imagen horizontal para computadora -->
+            <!-- IMAGEN HORIZONTAL PARA COMPUTADORA -->
             <img
                 class="imagen-web"
                 src="IMAGEN WEB TEMPORAL.png"
@@ -123,9 +108,7 @@
 
         </picture>
 
-        <!--
-        ÁREA CLICABLE DEL CORREO
-        -->
+        <!-- CORREO CLICABLE -->
         <a
             class="correo"
             href="mailto:hola@gridvault.mx"
