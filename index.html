@@ -2,9 +2,11 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>GridVault | Energía Inteligente</title>
 
@@ -50,39 +52,14 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            height: 14%;
+            height: 12%;
+
             display: block;
-            text-decoration: none;
+
             background: transparent;
+            text-decoration: none;
+
             z-index: 10;
-        }
-
-        /* COMPUTADORA */
-        @media (min-width: 769px) {
-
-            .correo {
-                height: 13%;
-            }
-
-        }
-
-        /* CELULAR */
-        @media (max-width: 768px) {
-
-            .contenedor {
-                width: 100%;
-            }
-
-            .imagen-web {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-            }
-
-            .correo {
-                height: 12%;
-            }
-
         }
 
     </style>
@@ -93,20 +70,11 @@
 
     <div class="contenedor">
 
-        <picture>
-
-            <!-- IMAGEN VERTICAL PARA CELULAR -->
-            <source
-                media="(max-width: 768px)"
-                srcset="IMAGEN WEB CELULAR.png">
-
-            <!-- IMAGEN HORIZONTAL PARA COMPUTADORA -->
-            <img
-                class="imagen-web"
-                src="IMAGEN WEB TEMPORAL.png"
-                alt="GridVault - Energía Inteligente">
-
-        </picture>
+        <!-- IMAGEN VERTICAL -->
+        <img
+            class="imagen-web"
+            src="IMAGEN%20WEB%20CELULAR.png"
+            alt="GridVault - Energía Inteligente">
 
         <!-- CORREO CLICABLE -->
         <a
