@@ -2,14 +2,21 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>GridVault | Energía Inteligente</title>
 
     <style>
+
+        /* =====================================
+           CONFIGURACIÓN GENERAL
+           ===================================== */
 
         * {
             margin: 0;
@@ -30,6 +37,11 @@
             overflow-x: hidden;
         }
 
+
+        /* =====================================
+           CONTENEDOR
+           ===================================== */
+
         .contenedor {
             position: relative;
             width: 100%;
@@ -38,19 +50,30 @@
             line-height: 0;
         }
 
+
+        /* =====================================
+           IMAGEN
+           ===================================== */
+
         .imagen {
             display: block;
             width: 100%;
             height: auto;
             max-width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
         }
 
-        /* ==============================
+
+        /* =====================================
            CORREO CLICKEABLE
-           ============================== */
+           COMPUTADORA
+           ===================================== */
 
         .correo {
             position: absolute;
+
             left: 0;
             bottom: 0;
 
@@ -63,27 +86,59 @@
 
             background: transparent;
             text-decoration: none;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================
+           CELULAR
+           ===================================== */
+
+        @media screen and (max-width: 768px) {
+
+            .correo {
+
+                left: 5%;
+
+                bottom: 4%;
+
+                width: 90%;
+
+                height: 8%;
+
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
+
 
     <div class="contenedor">
 
+
+        <!-- =====================================
+             IMÁGENES RESPONSIVAS
+             ===================================== -->
+
         <picture>
+
 
             <!-- =================================
                  CELULAR
-                 1206 × 2622
-                 Se utiliza hasta 768 px
+                 1206 × 2622 px
                  ================================= -->
 
             <source
                 media="(max-width: 768px)"
-                srcset="IMAGEN%20WEB%20CELULAR.png">
+                srcset="IMAGEN%20WEB%20CELULAR.png"
+            >
+
 
             <!-- =================================
                  COMPUTADORA
@@ -92,21 +147,26 @@
             <img
                 class="imagen"
                 src="IMAGEN%20WEB%20TEMPORAL.png"
-                alt="GridVault - Energía Inteligente">
+                alt="GridVault - Energía Inteligente"
+            >
+
 
         </picture>
 
-        <!-- =================================
-             CORREO
-             ================================= -->
+
+        <!-- =====================================
+             CORREO CLICKEABLE
+             ===================================== -->
 
         <a
             class="correo"
             href="mailto:hola@gridvault.mx"
-            aria-label="Enviar correo a hola@gridvault.mx">
-        </a>
+            aria-label="Enviar correo a hola@gridvault.mx"
+        ></a>
+
 
     </div>
+
 
 </body>
 
