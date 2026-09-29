@@ -14,6 +14,10 @@
 
     <style>
 
+        /* =========================================
+           CONFIGURACIÓN GENERAL
+           ========================================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -31,37 +35,53 @@
             overflow-x: hidden;
         }
 
-        /* ==============================
-           CONTENEDOR
-           ============================== */
+        img {
+            display: block;
+        }
+
+
+        /* =========================================
+           CONTENEDOR PRINCIPAL
+           ========================================= */
 
         .image-container {
             position: relative;
             width: 100%;
+            max-width: 100%;
             line-height: 0;
         }
 
-        /* ==============================
-           IMÁGENES
-           ============================== */
 
-        .desktop-image,
-        .mobile-image {
+        /* =========================================
+           IMAGEN COMPUTADORA
+           ========================================= */
+
+        .desktop-image {
             display: block;
             width: 100%;
             height: auto;
+            max-width: 100%;
         }
+
+
+        /* =========================================
+           IMAGEN CELULAR
+           ========================================= */
 
         .mobile-image {
             display: none;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
         }
 
-        /* ==============================
-           BOTÓN TRANSPARENTE
-           DEL CORREO - COMPUTADORA
-           ============================== */
+
+        /* =========================================
+           CORREO CLICKEABLE - COMPUTADORA
+           ========================================= */
 
         .email-link-desktop {
+
             position: absolute;
 
             left: 5%;
@@ -72,14 +92,17 @@
 
             display: block;
 
+            z-index: 10;
+
             text-decoration: none;
 
-            z-index: 10;
+            cursor: pointer;
         }
 
-        /* ==============================
+
+        /* =========================================
            CELULAR
-           ============================== */
+           ========================================= */
 
         @media screen and (max-width: 767px) {
 
@@ -89,40 +112,68 @@
 
             .mobile-image {
                 display: block;
+                width: 100%;
+                height: auto;
+                max-width: 100%;
             }
 
             .email-link-desktop {
                 display: none;
             }
 
-            /* BOTÓN TRANSPARENTE DEL CORREO
-               EN LA IMAGEN 1080 x 1350 */
+            /*
+             * ÁREA CLICKEABLE DEL CORREO
+             *
+             * La imagen nueva es 1206 x 2622.
+             */
 
             .email-link-mobile {
+
                 position: absolute;
 
                 left: 5%;
-                bottom: 6%;
 
-                width: 65%;
-                height: 8%;
+                bottom: 5%;
+
+                width: 70%;
+
+                height: 6%;
 
                 display: block;
 
+                z-index: 10;
+
                 text-decoration: none;
 
-                z-index: 10;
+                cursor: pointer;
             }
+
         }
+
+
+        /* =========================================
+           ENLACE CELULAR
+           ========================================= */
 
         .email-link-mobile {
             display: none;
         }
 
-        @media screen and (max-width: 767px) {
 
-            .email-link-mobile {
+        /* =========================================
+           TABLETS
+           ========================================= */
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+            .desktop-image {
                 display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .mobile-image {
+                display: none;
             }
 
         }
@@ -137,9 +188,10 @@
 
     <div class="image-container">
 
-        <!-- ==============================
-             COMPUTADORA
-             ============================== -->
+
+        <!-- =====================================
+             VERSIÓN COMPUTADORA
+             ===================================== -->
 
         <img
             class="desktop-image"
@@ -147,18 +199,22 @@
             alt="GridVault - Energía Inteligente"
         >
 
-        <!-- Enlace invisible sobre el correo -->
+
+        <!-- =====================================
+             CORREO COMPUTADORA
+             ===================================== -->
 
         <a
             class="email-link-desktop"
             href="mailto:hola@gridvault.mx"
-            aria-label="Enviar correo a GridVault"
+            aria-label="Enviar correo a hola@gridvault.mx"
         ></a>
 
 
-        <!-- ==============================
-             CELULAR
-             ============================== -->
+        <!-- =====================================
+             VERSIÓN CELULAR
+             1206 x 2622 px
+             ===================================== -->
 
         <img
             class="mobile-image"
@@ -166,17 +222,21 @@
             alt="GridVault - Energía Inteligente"
         >
 
-        <!-- Enlace invisible sobre el correo -->
+
+        <!-- =====================================
+             CORREO CELULAR
+             ===================================== -->
 
         <a
             class="email-link-mobile"
             href="mailto:hola@gridvault.mx"
-            aria-label="Enviar correo a GridVault"
+            aria-label="Enviar correo a hola@gridvault.mx"
         ></a>
+
 
     </div>
 
 
 </body>
 
-</html>
+</html>V
