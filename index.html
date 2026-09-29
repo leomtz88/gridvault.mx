@@ -14,10 +14,6 @@
 
     <style>
 
-        /* ==============================
-           CONFIGURACIÓN GENERAL
-           ============================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -35,36 +31,54 @@
             overflow-x: hidden;
         }
 
-        img {
-            display: block;
-        }
-
-
         /* ==============================
-           COMPUTADORA
+           CONTENEDOR
            ============================== */
 
-        .desktop-image {
+        .image-container {
+            position: relative;
+            width: 100%;
+            line-height: 0;
+        }
+
+        /* ==============================
+           IMÁGENES
+           ============================== */
+
+        .desktop-image,
+        .mobile-image {
+            display: block;
             width: 100%;
             height: auto;
-            max-width: 100%;
         }
-
-
-        /* ==============================
-           CELULAR
-           ============================== */
 
         .mobile-image {
             display: none;
-            width: 100%;
-            height: auto;
-            max-width: 100%;
         }
 
+        /* ==============================
+           BOTÓN TRANSPARENTE
+           DEL CORREO - COMPUTADORA
+           ============================== */
+
+        .email-link-desktop {
+            position: absolute;
+
+            left: 5%;
+            bottom: 8%;
+
+            width: 32%;
+            height: 8%;
+
+            display: block;
+
+            text-decoration: none;
+
+            z-index: 10;
+        }
 
         /* ==============================
-           CELULARES
+           CELULAR
            ============================== */
 
         @media screen and (max-width: 767px) {
@@ -75,9 +89,40 @@
 
             .mobile-image {
                 display: block;
-                width: 100%;
-                height: auto;
-                max-width: 100%;
+            }
+
+            .email-link-desktop {
+                display: none;
+            }
+
+            /* BOTÓN TRANSPARENTE DEL CORREO
+               EN LA IMAGEN 1080 x 1350 */
+
+            .email-link-mobile {
+                position: absolute;
+
+                left: 5%;
+                bottom: 6%;
+
+                width: 65%;
+                height: 8%;
+
+                display: block;
+
+                text-decoration: none;
+
+                z-index: 10;
+            }
+        }
+
+        .email-link-mobile {
+            display: none;
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .email-link-mobile {
+                display: block;
             }
 
         }
@@ -90,26 +135,46 @@
 <body>
 
 
-    <!-- =================================
-         VERSIÓN COMPUTADORA
-         ================================= -->
+    <div class="image-container">
 
-    <img
-        class="desktop-image"
-        src="IMAGEN WEB TEMPORAL.png"
-        alt="GridVault - Energía Inteligente"
-    >
+        <!-- ==============================
+             COMPUTADORA
+             ============================== -->
+
+        <img
+            class="desktop-image"
+            src="IMAGEN WEB TEMPORAL.png"
+            alt="GridVault - Energía Inteligente"
+        >
+
+        <!-- Enlace invisible sobre el correo -->
+
+        <a
+            class="email-link-desktop"
+            href="mailto:hola@gridvault.mx"
+            aria-label="Enviar correo a GridVault"
+        ></a>
 
 
-    <!-- =================================
-         VERSIÓN CELULAR
-         ================================= -->
+        <!-- ==============================
+             CELULAR
+             ============================== -->
 
-    <img
-        class="mobile-image"
-        src="IMAGEN WEB CELULAR.png"
-        alt="GridVault - Energía Inteligente"
-    >
+        <img
+            class="mobile-image"
+            src="IMAGEN WEB CELULAR.png"
+            alt="GridVault - Energía Inteligente"
+        >
+
+        <!-- Enlace invisible sobre el correo -->
+
+        <a
+            class="email-link-mobile"
+            href="mailto:hola@gridvault.mx"
+            aria-label="Enviar correo a GridVault"
+        ></a>
+
+    </div>
 
 
 </body>
