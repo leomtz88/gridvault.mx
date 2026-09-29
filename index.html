@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -32,8 +31,6 @@
         .contenedor {
             position: relative;
             width: 100%;
-            margin: 0;
-            padding: 0;
             line-height: 0;
         }
 
@@ -41,24 +38,15 @@
             display: block;
             width: 100%;
             height: auto;
-            margin: 0;
-            padding: 0;
-            border: 0;
         }
 
-        /* Área invisible sobre el correo */
         .correo {
             position: absolute;
             left: 0;
             bottom: 0;
             width: 100%;
             height: 12%;
-
             display: block;
-
-            background: transparent;
-            text-decoration: none;
-
             z-index: 10;
         }
 
@@ -70,13 +58,14 @@
 
     <div class="contenedor">
 
-        <!-- IMAGEN VERTICAL -->
+        <!-- ESTA ES LA IMAGEN CELULAR -->
         <img
             class="imagen-web"
             src="IMAGEN%20WEB%20CELULAR.png"
-            alt="GridVault - Energía Inteligente">
+            alt="GridVault"
+        >
 
-        <!-- CORREO CLICABLE -->
+        <!-- CORREO -->
         <a
             class="correo"
             href="mailto:hola@gridvault.mx"
