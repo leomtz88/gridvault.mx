@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+          content="width=device-width, initial-scale=1.0">
 
     <title>GridVault | Energía Inteligente</title>
 
@@ -27,17 +29,8 @@
             overflow-x: hidden;
         }
 
-        /* CONTENEDOR GENERAL */
-        .pagina {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            position: relative;
-        }
-
-        /* IMAGEN */
-        .imagen {
+        /* IMÁGENES */
+        img {
             display: block;
             width: 100%;
             height: auto;
@@ -49,37 +42,14 @@
 
         .celular {
             display: none;
-            position: relative;
             width: 100%;
         }
 
-        /* BOTÓN INVISIBLE SOBRE EL CORREO */
-        .correo-celular {
-            position: absolute;
+        .celular a {
             display: block;
-
-            /*
-              Posición aproximada del botón
-              de correo dentro de la imagen
-              vertical 1206 x 2622
-            */
-
-            left: 8%;
-            top: 68.5%;
-            width: 48%;
-            height: 5%;
-
-            z-index: 20;
-
-            background: transparent;
-
+            width: 100%;
             text-decoration: none;
-
             cursor: pointer;
-
-            -webkit-tap-highlight-color: transparent;
-
-            pointer-events: auto;
         }
 
 
@@ -89,30 +59,14 @@
 
         .computadora {
             display: block;
-            position: relative;
             width: 100%;
         }
 
-        .correo-computadora {
-            position: absolute;
-
-            left: 5%;
-            bottom: 7%;
-
-            width: 32%;
-            height: 9%;
-
-            z-index: 20;
-
-            background: transparent;
-
+        .computadora a {
+            display: block;
+            width: 100%;
             text-decoration: none;
-
             cursor: pointer;
-
-            -webkit-tap-highlight-color: transparent;
-
-            pointer-events: auto;
         }
 
 
@@ -121,13 +75,6 @@
            ========================= */
 
         @media screen and (max-width: 767px) {
-
-            html,
-            body {
-                width: 100%;
-                min-height: 100%;
-                overflow-x: hidden;
-            }
 
             .computadora {
                 display: none !important;
@@ -138,20 +85,11 @@
                 width: 100%;
             }
 
-            .imagen {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            .correo-celular {
-                display: block;
-            }
         }
 
 
         /* =========================
-           TABLET / COMPUTADORA
+           COMPUTADORA
            ========================= */
 
         @media screen and (min-width: 768px) {
@@ -165,64 +103,53 @@
                 width: 100%;
             }
 
-            .imagen {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =================================
+    <!-- =========================
          VERSIÓN CELULAR
-         ================================= -->
+         ========================= -->
 
     <div class="celular">
 
-        <img
-            class="imagen"
-            src="IMAGEN WEB CELULAR.png"
-            alt="GridVault - Energía Inteligente"
-        >
+        <a href="mailto:hola@gridvault.mx">
 
-        <!-- ÁREA CLICABLE DEL CORREO -->
-        <a
-            class="correo-celular"
-            href="mailto:hola@gridvault.mx"
-            aria-label="Enviar correo a GridVault"
-        ></a>
+            <img
+                src="IMAGEN WEB CELULAR.png"
+                alt="GridVault - Energía Inteligente"
+            >
+
+        </a>
 
     </div>
 
 
 
-    <!-- =================================
+    <!-- =========================
          VERSIÓN COMPUTADORA
-         ================================= -->
+         ========================= -->
 
     <div class="computadora">
 
-        <img
-            class="imagen"
-            src="IMAGEN WEB TEMPORAL.png"
-            alt="GridVault - Energía Inteligente"
-        >
+        <a href="mailto:hola@gridvault.mx">
 
-        <!-- ÁREA CLICABLE DEL CORREO -->
-        <a
-            class="correo-computadora"
-            href="mailto:hola@gridvault.mx"
-            aria-label="Enviar correo a GridVault"
-        ></a>
+            <img
+                src="IMAGEN WEB TEMPORAL.png"
+                alt="GridVault - Energía Inteligente"
+            >
+
+        </a>
 
     </div>
 
 
 </body>
+
 </html>
